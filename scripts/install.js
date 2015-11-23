@@ -2,6 +2,8 @@
  * node-sass: scripts/install.js
  */
 
+console.log('node-sass: scripts/install.js');
+
 var fs = require('fs'),
     eol = require('os').EOL,
     mkdir = require('mkdirp'),

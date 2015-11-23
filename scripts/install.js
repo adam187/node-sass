@@ -100,16 +100,22 @@ function applyProxy(options, cb) {
 
 function checkAndDownloadBinary() {
   try {
-    process.sass.getBinaryPath(true);
+    var binPath = process.sass.getBinaryPath(true);
+    console.log('binPath', binPath);
     return;
-  } catch (e) { }
+  } catch (e) { 
+    console.log('e', e)
+  }
 
+  console.log('process.sass.binaryPath');
   mkdir(path.dirname(process.sass.binaryPath), function(err) {
     if (err) {
       console.error(err);
       return;
     }
 
+    console.log('process.sass.binaryUrl', process.sass.binaryUrl);
+    console.log('process.sass.binaryPath', process.sass.binaryPath);
     download(process.sass.binaryUrl, process.sass.binaryPath, function(err) {
       if (err) {
         console.error(err);
